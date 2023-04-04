@@ -1,5 +1,6 @@
 import React, { Components, useEffect, useState } from 'react';
 import BreweryInfo from "./Components/breweryInfo";
+import BreweryChart from "./Components/BreweryChart";
 import { Input } from "semantic-ui-react";
 import './App.css';
 
@@ -113,7 +114,6 @@ function App() {
 
   return (
     <div className='App'>
-      <h1>New York State Breweries</h1>
       <div className='App-sidebar'>
           <h2 className='Header'>Filter By Brewery Types: </h2>
           <ul>
@@ -183,6 +183,21 @@ function App() {
             {proprietor > 0 ? <p>Proprietor: {proprietor}</p> : null}
             {closed > 0 ? <p>Closed: {closed}</p> : null}
           </div>
+      </div>
+      <div>
+        <button className='btn' onClick={setTypes}>Click to View Graphs</button>
+        { micro > 0 ? <BreweryChart 
+          micro={micro}
+          nano={nano}
+          regional={regional}
+          brewpub={brewpub}
+          large={large}
+          planning={planning}
+          bar={bar}
+          contract={contract}
+          proprietor={proprietor}
+          closed={closed}
+        /> : null }
       </div>
         <div className='App-row'>
           <div className='List'>

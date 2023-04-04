@@ -144,3 +144,14 @@ table {
   margin-left: 10px;
   text-align: center;
 }
+
+.shift-left {
+  width: 600px;
+  margin-left: 50px;
+}
+
+.shift-right {
+  width: 800px;
+  margin-right: 0px;
+  padding-right: 0px;
+}
